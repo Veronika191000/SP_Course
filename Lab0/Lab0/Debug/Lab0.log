@@ -1,0 +1,6 @@
+﻿  file.cpp
+c:\users\veronika\source\repos\lab0\lab0\file.cpp(24): warning C4477: 'printf' : format string '%-20lli' requires an argument of type '__int64', but variadic argument 3 has type 'int'
+  c:\users\veronika\source\repos\lab0\lab0\file.cpp(24): note: consider using '%i' in the format string
+  c:\users\veronika\source\repos\lab0\lab0\file.cpp(24): note: consider using '%Ii' in the format string
+  c:\users\veronika\source\repos\lab0\lab0\file.cpp(24): note: consider using '%I32i' in the format string
+  Lab0.vcxproj -> C:\Users\Veronika\source\repos\Lab0\Debug\Lab0.exe
