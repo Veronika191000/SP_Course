@@ -11,7 +11,7 @@ void ErrorInfo() {
   if (memory_object == NULL) {
     LPVOID descript_mess;//описание ошибки
     DWORD error_code = GetLastError();//записывается код последней возникшей ошибки
-    //позволяет по коду ошибки получить ее описание
+    //позволяет по коду ошибки получить ее описаниe
     FormatMessage(FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_FROM_SYSTEM, NULL,
       error_code, MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT), (LPTSTR)&descript_mess, 0, NULL);
     char* err_mess = (char*)descript_mess;
