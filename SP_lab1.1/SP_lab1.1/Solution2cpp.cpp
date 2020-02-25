@@ -9,14 +9,14 @@ void AsciiToUnicode(HANDLE sourseFile, HANDLE resultFile) {
   DWORD dwBytes;
   while (ReadFile(sourseFile, lpBuffer,
     BytesToRead,//сколько хотим считать байтов
-    (LPDWORD)&dwBytes,//возвращает сколько реально считано 
+    (LPDWORD)&dwBytes,//возвращает сколько реально считанo
     NULL))
   {
     if (dwBytes == 0) {//EOF
       break;
     }
     else {
-      //сначала вы вызываете MultiByteToWideChar возвращаем размер считанной строки в символах
+      //сначала вы вызываете MultiByteToWideChar возвращаем размер считанной строки в символаx
       int str_length = MultiByteToWideChar(CP_UTF8, 0, (LPCCH)lpBuffer, dwBytes, NULL, 0);
       //затем создаете некий строковый буфер с этим размером
       wchar_t* str = new wchar_t[str_length];
