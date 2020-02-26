@@ -4,14 +4,14 @@
 
 void ErrorInfo() {
   setlocale(LC_ALL, "Russian");
-  MEMORYSTATUS mem_status;//содержит информацию о системе
-  GlobalMemoryStatus(&mem_status);//извлекает инф. про систему и возращает инф о текущей памяти ОС
-  // генерация ошибки, память выделяетя из кучи и при неудачи возвращается NULL и вызываем GetLastError
+  MEMORYSTATUS mem_status;//include information about system
+  GlobalMemoryStatus(&mem_status);//extracts inf about the system and returns inf about the current OS memory
+  // error generation, memory is allocated from the heap and upon failure returns NULL and we call GetLastError
   HLOCAL memory_object = LocalAlloc(LPTR, mem_status.dwTotalVirtual * 100);
   if (memory_object == NULL) {
-    LPVOID descript_mess;//описание ошибки
-    DWORD error_code = GetLastError();//записывается код последней возникшей ошибки
-    //позволяет по коду ошибки получить ее описаниe
+    LPVOID descript_mess;//eeror description
+    DWORD error_code = GetLastError();//the code of the last error occurred is recorded
+    //allows error code to get its description
     FormatMessage(FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_FROM_SYSTEM, NULL,
       error_code, MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT), (LPTSTR)&descript_mess, 0, NULL);
     char* err_mess = (char*)descript_mess;
@@ -22,7 +22,7 @@ void ErrorInfo() {
 
 void SystemInfo() {
   SYSTEM_INFO system_info;
-  GetSystemInfo(&system_info);// возвращает поля с информацией о системе
+  GetSystemInfo(&system_info);// returns fields with system information
   printf("  Hardware information: \n");
   printf("  OEM ID: %u\n", system_info.dwOemId);
   printf("  Number of processors: %u\n", system_info.dwNumberOfProcessors);
