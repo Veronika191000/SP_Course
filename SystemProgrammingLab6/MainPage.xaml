@@ -1,0 +1,18 @@
+﻿<Page
+    x:Class="SystemProgrammingLab6.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SystemProgrammingLab6"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Loaded="MainPage_OnLoaded">
+    <NavigationView PaneDisplayMode="Left" SelectionChanged="NavigationView_OnSelectionChanged">
+        <NavigationView.MenuItems>
+            <NavigationViewItem Content="О разработчике" Tag="AboutDeveloper" x:Name="AboutDeveloper"/>
+            <NavigationViewItem Content="Калькулятор" Tag="Calculator"/>
+        </NavigationView.MenuItems>
+        <Frame x:Name="Frame">
+        </Frame>
+    </NavigationView>
+</Page>
